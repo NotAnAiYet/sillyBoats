@@ -6,7 +6,6 @@
 
 <style>
     img {
-        z-index: 2;
         width: 100%;
         }
-  </style>
+</style>
