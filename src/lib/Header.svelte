@@ -1,4 +1,8 @@
-<img src="src/assets/under-construction-text.gif" alt="Under Construction">
+<script>
+    import constructionText from "./assets/under-construction-text.gif"
+</script>
+
+<img src={constructionText} alt="Under Construction">
 
 <style>
     img {

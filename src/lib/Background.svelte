@@ -1,4 +1,7 @@
-<img class="background" src="src/assets/matrix.gif" alt="matrix">
+<script>
+    import matrix from "./assets/matrix.gif"
+</script>
+<img class="background" src={matrix} alt="matrix">
 
 <style>
   img.background {
