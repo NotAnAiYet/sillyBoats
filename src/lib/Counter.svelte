@@ -6,5 +6,11 @@
 </script>
 
 <button on:click={increment}>
-  count is {count}
+  {count > 0 ? `you clicked me ${count} times` : "I just count"}
 </button>
+
+<style>
+  button {
+    margin-bottom: 10px;
+  }
+</style>
