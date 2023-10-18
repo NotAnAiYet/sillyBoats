@@ -2,7 +2,6 @@
   font-family:  "Comic Sans MS", "Comic Sans", cursive;
 
   color: rgba(172, 21, 177, 0.87);
-  text-shadow: 2px 2px rgb(38, 218, 53);
   background-color: #242424;
 }
 
@@ -25,8 +24,10 @@ div.background {
 
 p {
   margin: 0;
+  text-shadow: 1px 1px rgb(38, 218, 53);
 }
 
 h1 {
   margin: 1rem;
+  text-shadow: 2px 2px rgb(38, 218, 53);
 }
