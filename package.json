@@ -1,15 +1,15 @@
 {
   "name": "sillyboats",
   "private": true,
-  "version": "0.0.0",
-  "homepage": "https://highom.github.io/sillyBoats",
+  "version": "0.0.1",
+  "homepage": "https://silly.boats",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "deploy": "gh-pages -d dist"
+    "deploy": "echo silly.boats > ./dist/CNAME && gh-pages -d dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
