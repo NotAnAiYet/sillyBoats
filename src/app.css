@@ -1,5 +1,10 @@
+@font-face {
+  font-family: 'Comic Sans MS';
+  src: url("./lib/assets/comicSansMs.ttf");
+}
+
 :root {
-  font-family:  "Comic Sans MS", "Comic Sans", cursive;
+  font-family: "Comic Sans MS";
 
   color: rgba(172, 21, 177, 0.87);
   background-color: #242424;
