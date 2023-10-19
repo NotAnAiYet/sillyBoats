@@ -10,20 +10,31 @@
   background-color: #242424;
 }
 
+html, 
+body {
+    height: 100%;
+}
+
 body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 div.background {
   background-color: #242424ad;
   border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
 #app {
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 0;
+  padding: 1rem;
   padding-bottom: 0px;
   text-align: center;
 }

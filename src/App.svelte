@@ -4,10 +4,10 @@
     import Counter from './lib/Counter.svelte';
 </script>
 
+<Background />
 <main>
   <div class="background">
-  <Background />
-  <Construction />
-  <Counter />
-</div>
+    <Construction />
+    <Counter />
+  </div>
 </main>

@@ -3,10 +3,15 @@
 </script>
 
 <h1>Welcome to <span class="sillyWorker">Silly</span> Boats</h1>
-<p>This site is currently under construction</p>
-<img src={sign} alt="Under Construction" width="100%">
+<p>This site is currently under construction. </p>
+<img src={sign} alt="Under Construction">
 <p>Feel free to click this button!</p>
+
 <style>
+    img {
+        padding: 1rem 0px
+    }
+
     .sillyWorker::after {
         background-image: url(./assets/construction-worker.gif);
         background-size: 60px 80px;
