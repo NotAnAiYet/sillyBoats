@@ -9,17 +9,17 @@
 <style>
     .sillyWorker::after {
         background-image: url(./assets/construction-worker.gif);
-        background-size: 80px 98px;
+        background-size: 60px 80px;
         position: relative;
-        bottom: 20px;
-        right: 79px;
+        bottom: 22px;
+        right: 67px;
         display: inline-block;
-        width: 80px; 
-        height: 100px;
+        width: 60px; 
+        height: 80px;
         content:"";
     }
     .sillyWorker{
         white-space: nowrap;
-        margin-right: -80px;
+        margin-right: -60px;
     }
 </style>
