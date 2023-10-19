@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import constructionText from "./assets/under-construction-text.gif"
 </script>
 

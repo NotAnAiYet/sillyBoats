@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import matrix from "./assets/matrix.gif"
 </script>
 <img class="background" src={matrix} alt="matrix">

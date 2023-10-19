@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import sign from './assets/under-construction-sign.gif'
 </script>
 
