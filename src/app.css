@@ -21,6 +21,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-image: url("./lib/assets/matrix.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 div.background {
