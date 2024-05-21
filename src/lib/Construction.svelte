@@ -5,7 +5,6 @@
 <h1>Welcome to <span class="sillyWorker">Silly</span> Boats</h1>
 <p>This site is currently under construction. </p>
 <img src={sign} alt="Under Construction" width="80%">
-<p>Feel free to click this button!</p>
 
 <style>
     img {

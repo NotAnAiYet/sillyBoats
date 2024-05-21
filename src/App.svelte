@@ -6,6 +6,6 @@
 <main>
   <div class="background">
     <Construction />
-    <Counter />
   </div>
+  <Counter />
 </main>
