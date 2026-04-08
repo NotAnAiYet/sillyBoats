@@ -1,0 +1,489 @@
+/* -----------------------------------------------------------------------------
+   Yannick — 1990s whimsical personal site (external stylesheet only)
+   ----------------------------------------------------------------------------- */
+
+:root {
+  --panel-bg: rgba(255, 248, 220, 0.78);
+  --panel-border: #c41e3a;
+  --panel-shadow: 4px 4px 0 #1a1a2e;
+  --accent-hot: #ff00aa;
+  --accent-cool: #00d4aa;
+  --link: #0000ee;
+  --link-visited: #551a8b;
+  --text-dark: #1a0a2e;
+  --tile-inner: rgba(255, 255, 255, 0.55);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "VT323", "Courier New", Courier, monospace;
+  font-size: 1.35rem;
+  color: var(--text-dark);
+  background-color: #0d0221;
+  overflow-x: hidden;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+
+a {
+  color: inherit;
+}
+
+
+/* Full-viewport background image + 90s "outer space / lava" vibe */
+.retro-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-color: #2b1055;
+  background-image: url("https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?auto=format&fit=crop&w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.retro-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 150, 0.15) 0%,
+    rgba(0, 200, 255, 0.12) 50%,
+    rgba(255, 200, 0, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+.site-wrap {
+  z-index: 1;
+}
+
+.retro-header .splashText {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000, 0 0 12px rgba(255, 0, 200, 0.8);
+}
+
+.site-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: clamp(0.85rem, 3vw, 1.35rem);
+  line-height: 1.6;
+  color: #fffde7;
+  text-shadow:
+    3px 3px 0 #ff006e,
+    6px 6px 0 #3a0ca3,
+    0 0 20px rgba(0, 255, 200, 0.5);
+}
+
+.title-graphic {
+  color: #ffea00;
+  animation: twinkle 1.8s ease-in-out infinite;
+}
+
+.title-graphic:last-child {
+  animation-delay: 0.9s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: #e0f7fa;
+  text-shadow: 1px 1px 2px #000;
+}
+
+/* Marquee (CSS-driven, accessible alternative to <marquee>) */
+.marquee-wrap {
+  overflow: hidden;
+  border: 3px ridge #ffd700;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 3px 0 #000;
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee-text {
+  flex-shrink: 0;
+  padding: 0.35rem 2rem;
+  font-size: 1.1rem;
+  color: #fff9c4;
+  white-space: nowrap;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Semi-transparent panels — core 90s-over-photo look */
+.retro-panel {
+  background: var(--panel-bg);
+  border: 4px double var(--panel-border);
+  box-shadow: var(--panel-shadow);
+  padding: 1.25rem 1.5rem;
+  backdrop-filter: blur(4px);
+}
+
+.panel-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.65rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px groove #f4a261;
+  color: #7209b7;
+}
+
+.blink {
+  animation: blink-90s 1.1s step-end infinite;
+  color: var(--accent-hot);
+  margin-right: 0.5rem;
+}
+
+@keyframes blink-90s {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.retro-lead {
+  font-size: 1.4rem;
+}
+
+.retro-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.retro-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.bullet {
+  position: absolute;
+  left: 0;
+  color: var(--accent-cool);
+}
+
+.project-tile {
+  background: var(--tile-inner);
+  border: 2px outset #83c5be;
+  padding: 0.85rem;
+  height: 100%;
+}
+
+.project-name {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.55rem;
+  line-height: 1.6;
+  color: #0077b6;
+  margin-bottom: 0.65rem;
+}
+
+.badge-retro {
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 0.1rem 0.45rem;
+  margin-right: 0.35rem;
+  margin-top: 0.25rem;
+  background: linear-gradient(180deg, #fefae0, #dda15e);
+  border: 2px solid #bc6c25;
+  color: #283618;
+}
+
+/* Guestbook + inputs */
+.retro-input {
+  font-family: inherit;
+  font-size: 1.15rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 3px inset #999;
+  border-radius: 0;
+}
+
+.retro-input:focus {
+  outline: 2px dashed var(--accent-hot);
+  outline-offset: 2px;
+}
+
+.btn-retro {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.55rem;
+  line-height: 1.6;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(180deg, #b5179e, #7209b7);
+  color: #fff;
+  border: 3px outset #c77dff;
+  box-shadow: 2px 2px 0 #000;
+}
+
+.btn-retro:hover {
+  background: linear-gradient(180deg, #f72585, #b5179e);
+  color: #fff;
+}
+
+.btn-retro:active {
+  border-style: inset;
+  transform: translate(1px, 1px);
+}
+
+.site-hint {
+	color: #d30d14;
+	font-style: italic;
+	text-shadow: 2px 2px 0 #000, 0 0 10px rgba(0, 255, 200, 0.5);
+}
+
+/* Honeypot: hide from sighted users, keep out of tab order */
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.turnstile-wrap {
+  min-height: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.turnstile-wrap code {
+  font-size: 0.95rem;
+}
+
+.guestbook-entries {
+  max-height: 14rem;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+  border: 2px inset rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.guestbook-entry {
+  padding: 0.5rem 0.4rem;
+  border-bottom: 1px dashed rgba(114, 9, 183, 0.35);
+}
+
+.guestbook-entry:last-child {
+  border-bottom: none;
+}
+
+.guestbook-entry-meta {
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.guestbook-name {
+  color: #0077b6;
+}
+
+.guestbook-when {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.guestbook-message {
+  font-size: 1.05rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.guestbook-empty {
+  padding: 0.75rem 0.25rem;
+  color: #555;
+}
+
+.guestbook-loading {
+  color: #560bad;
+  font-style: italic;
+}
+
+.guestbook-toast {
+  min-height: 2.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #0077b6;
+}
+
+.guestbook-toast.visible {
+  animation: pop-in 0.35s ease;
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Webring buttons */
+.btn-ring {
+  font-family: inherit;
+  font-size: 1rem;
+  background: linear-gradient(180deg, #ffd6a5, #ffadad);
+  border: 2px outset #ff006e;
+  color: #1a1a2e;
+  padding: 0.25rem 0.6rem;
+}
+
+.btn-ring:hover {
+  background: linear-gradient(180deg, #ffee93, #ffd6a5);
+  color: #000;
+}
+
+.btn-ring:active {
+  border-style: inset;
+}
+
+.ring-status {
+  font-style: italic;
+  color: #560bad;
+}
+
+.last-updated {
+  background: rgba(224, 247, 250, 0.75);
+}
+
+.btn-link-retro {
+  font-family: inherit;
+  font-size: 1.1rem;
+  background: none;
+  border: none;
+  color: var(--link);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-link-retro:hover {
+  color: #d00000;
+}
+
+.btn-link-retro:focus {
+  outline: 2px dashed var(--accent-cool);
+  outline-offset: 2px;
+}
+
+/* Footer */
+.retro-footer {
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.retro-footer a {
+  color: #ffea00;
+}
+
+.retro-footer a:visited {
+  color: #caffbf;
+}
+
+.footer-links .divider {
+  opacity: 0.7;
+  margin: 0 0.35rem;
+}
+
+/* Confetti overlay */
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -12px;
+  animation: confetti-fall linear forwards;
+  opacity: 0.95;
+}
+
+@keyframes confetti-fall {
+  to {
+    transform: translate(var(--dx), 110vh) rotate(720deg);
+    opacity: 0.3;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner {
+    animation: none;
+  }
+
+  .marquee-text {
+    white-space: normal;
+    text-align: center;
+    display: block;
+  }
+
+  .title-graphic,
+  .blink {
+    animation: none;
+  }
+
+  .confetti-piece {
+    animation: none;
+    display: none;
+  }
+}
+
+
+/* Socials box icons shadow effect */
+.icon-link svg {
+  filter:
+    drop-shadow(2px 2px 0 #fff)
+    drop-shadow(0 0 5px rgba(255, 0, 200, 0.8));
+  transition: filter 0.2s, color 0.2s, fill 0.2s;
+}
+
+.icon-link:hover svg {
+  color: #fff;
+  filter:
+    drop-shadow(2px 2px 0 #000)
+    drop-shadow(0 0 5px rgba(255, 0, 200, 0.8));
+}
