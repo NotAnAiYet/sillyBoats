@@ -306,6 +306,9 @@
     var container = document.getElementById("turnstile-container");
     if (!container) return;
 
+    // Show the container when initializing
+    container.style.display = "block";
+
     if (!isBackendConfigured()) {
       return;
     }
@@ -486,7 +489,25 @@
   initWebring();
   initConfetti();
   initEasterEgg();
-  initTurnstile();
+
+  // Only initialize Turnstile (captcha) after user starts typing in the guestbook form
+  var turnstileInitialized = false;
+  function maybeInitTurnstile() {
+    if (!turnstileInitialized) {
+      initTurnstile();
+      turnstileInitialized = true;
+    }
+  }
+
+  if (guestForm) {
+    var nameInput = document.getElementById("guest-name");
+    var msgInput = document.getElementById("guest-msg");
+    [nameInput, msgInput].forEach(function (input) {
+      if (input) {
+        input.addEventListener("input", maybeInitTurnstile, { once: true });
+      }
+    });
+  }
 
   initHitCounter().then(function () {
     return loadGuestbook();

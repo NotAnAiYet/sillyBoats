@@ -33,7 +33,7 @@ b, strong {
 
 
 a {
-  color: inherit;
+  color: initial;
 }
 
 
@@ -236,7 +236,7 @@ a {
   border-radius: 0;
 }
 
-.retro-input:focus {
+.retro-input:focus, .btn-retro:focus, .btn-ring:focus {
   outline: 2px dashed var(--accent-hot);
   outline-offset: 2px;
 }
@@ -400,7 +400,7 @@ a {
   color: #d00000;
 }
 
-.btn-link-retro:focus {
+.btn-link-retro:focus, .icon-link:focus, .footer-links a:focus {
   outline: 2px dashed var(--accent-cool);
   outline-offset: 2px;
 }
