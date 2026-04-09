@@ -13,6 +13,7 @@
   var confettiBtn = document.getElementById("confetti-btn");
   var confettiLayer = document.getElementById("confetti-layer");
   var yearEl = document.getElementById("year");
+  var lastUpdatedEl = document.getElementById("last-updated");
   var easterLink = document.getElementById("easter-egg-link");
 
   var STORAGE_HITS = "sb_homepage_hits_v1";
@@ -484,7 +485,23 @@
     });
   }
 
+  function initLastUpdated() {
+    if (!lastUpdatedEl) return;
+    var cfg = getConfig();
+    if (cfg.lastUpdated) {
+      var iso = cfg.lastUpdated;
+      lastUpdatedEl.setAttribute("datetime", iso);
+      var d = new Date(iso);
+      if (!isNaN(d.getTime())) {
+        lastUpdatedEl.textContent = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      } else {
+        lastUpdatedEl.textContent = iso;
+      }
+    }
+  }
+
   initYear();
+  initLastUpdated();
   initGuestbook();
   initWebring();
   initConfetti();
